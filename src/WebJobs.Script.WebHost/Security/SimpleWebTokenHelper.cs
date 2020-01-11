@@ -84,6 +84,19 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost.Security
             }
         }
 
+        public static string Decrypt(string value)
+        {
+            // Use WebSiteAuthEncryptionKey if available else fallback to ContainerEncryptionKey.
+            // Until the container is specialized to a specific site WebSiteAuthEncryptionKey will not be available.
+            byte[] key;
+            if (!TryGetEncryptionKey(EnvironmentSettingNames.WebSiteAuthEncryptionKey, out key, false))
+            {
+                TryGetEncryptionKey(EnvironmentSettingNames.ContainerEncryptionKey, out key);
+            }
+
+            return Decrypt(key, value);
+        }
+
         public static bool TryValidateToken(string token, ISystemClock systemClock)
         {
             try
@@ -98,15 +111,7 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost.Security
 
         public static bool ValidateToken(string token, ISystemClock systemClock)
         {
-            // Use WebSiteAuthEncryptionKey if available else fallback to ContainerEncryptionKey.
-            // Until the container is specialized to a specific site WebSiteAuthEncryptionKey will not be available.
-            byte[] key;
-            if (!TryGetEncryptionKey(EnvironmentSettingNames.WebSiteAuthEncryptionKey, out key, false))
-            {
-                TryGetEncryptionKey(EnvironmentSettingNames.ContainerEncryptionKey, out key);
-            }
-
-            var data = Decrypt(key, token);
+            var data = Decrypt(token);
 
             var parsedToken = data
                 // token = key1=value1;key2=value2

@@ -3,12 +3,15 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
 
 namespace Microsoft.Azure.WebJobs.Script.WebHost
 {
     public interface ISecretManager
     {
+        Task<(string, AuthorizationLevel)> GetAuthorizationLevelOrNullAsync(string key, string functionName = null);
+
         /// <summary>
         /// Deletes a function secret.
         /// </summary>

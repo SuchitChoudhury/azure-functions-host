@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Azure.WebJobs.Script.WebHost;
 using Microsoft.Extensions.Logging;
@@ -87,6 +88,11 @@ namespace Microsoft.Azure.WebJobs.Script.Tests
                     { "SystemKey2", "SystemValue2" },
                     { "Test_Extension", "SystemValue3" },
                 };
+        }
+
+        public Task<(string, AuthorizationLevel)> GetAuthorizationLevelOrNullAsync(string key, string functionName = null)
+        {
+            throw new NotImplementedException();
         }
     }
 }
