@@ -15,7 +15,7 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost.Middleware
     {
         private RequestDelegate _invoke;
 
-        public JobHostEasyAuthMiddleware(IOptions<HostEasyAuthOptions> hostEasyAuthOptions, HttpContext httpContext) //context next = context without easyauth config values.. or remove the delegate entirely? does this code deal with config at all?
+        public JobHostEasyAuthMiddleware(IOptions<HostEasyAuthOptions> hostEasyAuthOptions)
         {
             RequestDelegate contextNext = async context =>
             {

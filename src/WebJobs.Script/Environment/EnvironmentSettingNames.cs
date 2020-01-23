@@ -89,17 +89,17 @@ namespace Microsoft.Azure.WebJobs.Script
         public const string CorsSupportCredentials = "CORS_SUPPORT_CREDENTIALS";
 
        // EasyAuth settings
-        public const string WebsiteAuthAllowedAudiences = "WEBSITE_AUTH_ALLOWED_AUDIENCES";
-        public const string WebsiteAuthAutoAAD = "WEBSITE_AUTH_AUTO_AAD";
+        //public const string WebsiteAuthAllowedAudiences = "WEBSITE_AUTH_ALLOWED_AUDIENCES";
+       // public const string WebsiteAuthAutoAAD = "WEBSITE_AUTH_AUTO_AAD";
         public const string WebsiteAuthClientId = "WEBSITE_AUTH_CLIENT_ID";
-        public const string WebsiteAuthClientSecret = "WEBSITE_AUTH_CLIENT_SECRET";
-        public const string WebsiteAuthDefaultProvider = "WEBSITE_AUTH_DEFAULT_PROVIDER";
-        public const string WebsiteAuthEncryptionKey = "WEBSITE_AUTH_ENCRYPTION_KEY";
-        public const string WebsiteAuthLogoutPath = "WEBSITE_AUTH_LOGOUT_PATH";
-        public const string WebsiteAuthOpenIdIssuer = "WEBSITE_AUTH_OPENID_ISSUER";
-        public const string WebsiteAuthRuntimeVersion = "WEBSITE_AUTH_RUNTIME_VERSION";
-        public const string WebsiteAuthSigningKey = "WEBSITE_AUTH_SIGNING_KEY";
-        public const string WebsiteAuthTokenStore = "WEBSITE_AUTH_TOKEN_STORE";
-        public const string WebsiteAuthUnauthenticatedAction = "WEBSITE_AUTH_UNAUTHENTICATED_ACTION";
+        //public const string WebsiteAuthClientSecret = "WEBSITE_AUTH_CLIENT_SECRET";
+        //public const string WebsiteAuthDefaultProvider = "WEBSITE_AUTH_DEFAULT_PROVIDER";
+        //public const string WebsiteAuthEncryptionKey = "WEBSITE_AUTH_ENCRYPTION_KEY";
+        //public const string WebsiteAuthLogoutPath = "WEBSITE_AUTH_LOGOUT_PATH";
+        //public const string WebsiteAuthOpenIdIssuer = "WEBSITE_AUTH_OPENID_ISSUER";
+        //public const string WebsiteAuthRuntimeVersion = "WEBSITE_AUTH_RUNTIME_VERSION";
+        //public const string WebsiteAuthSigningKey = "WEBSITE_AUTH_SIGNING_KEY";
+        //public const string WebsiteAuthTokenStore = "WEBSITE_AUTH_TOKEN_STORE";
+        //public const string WebsiteAuthUnauthenticatedAction = "WEBSITE_AUTH_UNAUTHENTICATED_ACTION";
     }
 }

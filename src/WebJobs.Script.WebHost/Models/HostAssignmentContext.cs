@@ -125,6 +125,13 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost.Models
                     environment.SetEnvironmentVariable(EnvironmentSettingNames.CorsAllowedOrigins, allowedOrigins);
                 }
             }
+
+            if (EasyAuthSettings != null)
+            {
+                environment.SetEnvironmentVariable(EnvironmentSettingNames.EasyAuthEnabled, EasyAuthSettings.SiteAuthEnabled.ToString()); // TODO - confirm this is the appsetting vs the site config value? bc appsetting will override
+                environment.SetEnvironmentVariable(EnvironmentSettingNames.WebsiteAuthClientId, EasyAuthSettings.SiteAuthClientId);
+                // TODO - do we need SiteAuthAutoProvisioned as well? If no, remove from EasyAuthSettings.cs.
+            }
         }
     }
 }
